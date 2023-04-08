@@ -17,7 +17,25 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
     <!-- Core theme CSS (includes Bootstrap)-->
+
+    <link href="css/form.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <style>
+      .list-group-item {
+        background-color: #f7f7f7;
+        position: relative;
+        margin-bottom: 5px;
+      }
+
+      .remove-icon {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <div class="d-flex" id="wrapper">
@@ -112,7 +130,7 @@
           >
             <img src="./img/icons/Language.svg" alt="Language icon" />
             <span class="align-middle m-2">Language</span>
-            <span class="align-middle" style="color: #1AB068;">English</span>
+            <span class="align-middle" style="color: #1ab068">English</span>
           </a>
           <a
             class="list-group-item list-group-item-action list-group-item-light"
@@ -130,9 +148,12 @@
           class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
         >
           <div class="container-fluid">
-            <button class="btn btn-primary" id="sidebarToggle">
-              Toggle Menu
+            <button class="btn" id="sidebarToggle">
+              <i class="bi bi-arrow-left-circle" style="font-size: 2rem"></i>
             </button>
+            <img src="img/icons/uni-logo.svg" alt="university logo" />
+            <div style="font-weight: bold">University of Bahrain</div>
+
             <button
               class="navbar-toggler"
               type="button"
@@ -146,10 +167,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#!">Home</a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
                 <li class="nav-item dropdown">
                   <a
                     class="nav-link dropdown-toggle"
@@ -159,16 +176,25 @@
                     data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
-                    >Dropdown</a
-                  >
+                    ><i class="bi bi-bell"></i
+                  ></a>
                   <div
                     class="dropdown-menu dropdown-menu-end"
                     aria-labelledby="navbarDropdown"
                   >
-                    <a class="dropdown-item" href="#!">Action</a>
-                    <a class="dropdown-item" href="#!">Another action</a>
+                    <a class="dropdown-item" href="#!">notification</a>
+                    <a class="dropdown-item" href="#!">Another notification</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#!">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item active">
+                  <div class="d-flex">
+                    <i
+                      class="bi bi-person-circle text-center"
+                      style="color: #4d0790; font-size: 1.5rem"
+                    ></i>
+                    <a class="nav-link pt-2" href="#!">Home</a>
                   </div>
                 </li>
               </ul>
@@ -176,27 +202,346 @@
           </div>
         </nav>
         <!-- Page content-->
-        <div class="container-fluid">
-          <h1 class="mt-4">Simple Sidebar</h1>
-          <p>
-            The starting state of the menu will appear collapsed on smaller
-            screens, and will appear non-collapsed on larger screens. When
-            toggled using the button below, the menu will change.
-          </p>
-          <p>
-            Make sure to keep all page content within the
-            <code>#page-content-wrapper</code>
-            . The top navbar is optional, and just for demonstration. Just
-            create an element with the
-            <code>#sidebarToggle</code>
-            ID which will toggle the menu when clicked.
-          </p>
+        <div class="container-fluid pt-4">
+          <div class="h3">
+            <i class="bi bi-arrow-left"></i> Complete Event Information
+          </div>
+          <div class="container">
+            <!-- start step indicators -->
+            <form id="progress" action="#!">
+              <div class="form-header d-flex mb-4">
+                <span class="stepIndicator">Basic Information of event</span>
+                <span class="stepIndicator">Location of event</span>
+                <span class="stepIndicator">Event’s Goals</span>
+                <span class="stepIndicator">More Details</span>
+                <span class="stepIndicator">Attachments</span>
+              </div>
+            </form>
+            <!-- end step indicators -->
+
+            <div id="signUpForm" action="#!">
+              <!-- step one -->
+              <div class="step">
+                <div class="card">
+                  <img
+                    src="./img/school.png"
+                    class="card-img-top img-fluid img-mobile img-height"
+                    alt="Capital school of English language img"
+                  />
+                  <div
+                    class="card-body d-flex justify-content-between align-items-center"
+                  >
+                    <div class="card-title mt-3 text-left">
+                      Capital school of English language
+                    </div>
+
+                    <a
+                      href="#"
+                      class="text-center btn btn-outline-basic btn-block btn-sm my-2 my-sm-0"
+                      >Change event cover</a
+                    >
+                  </div>
+                </div>
+                <div class="mb-3 mt-4">
+                  <div class="row mb-3">
+                    <div class="col">
+                      <label for="english-title" class="mb-2">
+                        English Title
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="International Conference on Innovation"
+                        oninput="this.className = ''"
+                        name="english-title"
+                        id="english-title"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="arabic-title" class="mb-2">
+                        Arabic Title
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="المؤتمر الدولي للابتكار"
+                        oninput="this.className = ''"
+                        name="arabic-title"
+                        class="form-control"
+                        id="arabic-title"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col">
+                      <label for="date" class="mb-2">Date of event</label>
+                      <input
+                        id="date"
+                        type="date"
+                        oninput="this.className = ''"
+                        name="date"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="start-time" class="mb-2"
+                        >Start time of event</label
+                      >
+                      <input
+                        id="start-time"
+                        type="time"
+                        oninput="this.className = ''"
+                        name="start-time"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="end-time" class="mb-2"
+                        >End time of event</label
+                      >
+                      <input
+                        id="end-time"
+                        type="time"
+                        oninput="this.className = ''"
+                        name="end-time"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="duration" class="mb-2"
+                        >Duration of event</label
+                      >
+                      <input
+                        id="duration"
+                        type="number"
+                        oninput="this.className = ''"
+                        name="duration"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col">
+                      <label for="external-link" class="mb-2"
+                        >External Link</label
+                      >
+                      <input
+                        id="external-link"
+                        type="text"
+                        oninput="this.className = ''"
+                        name="external-link"
+                        placeholder="Enter the external link of event"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="col">
+                      <label for="youTube-link" class="mb-2"
+                        >YouTube Link</label
+                      >
+                      <input
+                        id="youTube-link"
+                        type="text"
+                        oninput="this.className = ''"
+                        name="youTube-link"
+                        placeholder="Enter the YouTube of event"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                  <label for="English-Description" class="d-block mb-2"
+                    >English Description</label
+                  >
+                  <textarea
+                    name="English-Description"
+                    id="English-Description"
+                    rows="7"
+                    class="w-100"
+                    oninput="this.className = ''"
+                    required
+                    placeholder="Enter the English description of event"
+                  ></textarea>
+                  <label for="Arabic-Description" class="d-block mb-2"
+                    >Arabic Description</label
+                  >
+                  <textarea
+                    name="Arabic-Description"
+                    id="Arabic-Description"
+                    rows="7"
+                    required
+                    class="w-100"
+                    oninput="this.className = ''"
+                    placeholder="Enter the Arabic description of event"
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- step Two -->
+              <div class="step">
+                <p class="text-center mb-4">We will never sell it</p>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    placeholder="Full name"
+                    oninput="this.className = ''"
+                    name="fullname"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    placeholder="Mobile"
+                    oninput="this.className = ''"
+                    name="mobile"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    placeholder="Address"
+                    oninput="this.className = ''"
+                    name="address"
+                  />
+                </div>
+              </div>
+
+              <!-- step three -->
+              <div class="step">
+                <div class="alert alert-basic" role="alert">Event’s Goals</div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-9">
+                      <input
+                        type="text"
+                        class="form-control p-2"
+                        id="goalInput"
+                        placeholder="Enter a new goal"
+                      />
+                    </div>
+                    <div class="col-md-3 mt-2 mt-md-0 mx-auto">
+                      <button
+                        type="button"
+                        class="btn btn-block text-light d-flex justify-content-center align-items-center"
+                        id="addBtn"
+                        style="background-color: #4d0790 !important"
+                      >
+                        <i class="bi bi-plus-square"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <ul
+                    class="list-group mt-4 order-first order-md-last"
+                    id="goalList"
+                  >
+                    <!-- Existing goals will be added here -->
+                  </ul>
+                </div>
+              </div>
+              <!-- step four -->
+              <div class="step">
+                <p class="text-center mb-4">We will never sell it</p>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    placeholder="Full name"
+                    oninput="this.className = ''"
+                    name="fullname"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    placeholder="Mobile"
+                    oninput="this.className = ''"
+                    name="mobile"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    placeholder="Address"
+                    oninput="this.className = ''"
+                    name="address"
+                  />
+                </div>
+              </div>
+              <!-- step four -->
+              <div class="step">
+                <p class="text-center mb-4">We will never sell it</p>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    placeholder="Full name"
+                    oninput="this.className = ''"
+                    name="fullname"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    placeholder="Mobile"
+                    oninput="this.className = ''"
+                    name="mobile"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    placeholder="Address"
+                    oninput="this.className = ''"
+                    name="address"
+                  />
+                </div>
+              </div>
+
+              <!-- start previous / next buttons -->
+              <div class="form-footer d-flex justify-content-between">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">
+                  Previous
+                </button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">
+                  Next
+                </button>
+              </div>
+              <!-- end previous / next buttons -->
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <script>
+      // Get elements
+      const goalInput = document.getElementById('goalInput');
+      const addBtn = document.getElementById('addBtn');
+      const goalList = document.getElementById('goalList');
+
+      // Add event listener to button
+      addBtn.addEventListener('click', function () {
+        // Get input value
+        const newGoal = goalInput.value;
+        // Create list item element
+        const li = document.createElement('li');
+        li.className = 'list-group-item';
+        // Create text node and append to list item
+        const textNode = document.createTextNode(newGoal);
+        li.appendChild(textNode);
+        // Create remove icon and append to list item
+        const removeIcon = document.createElement('i');
+        removeIcon.className = 'bi bi-trash remove-icon';
+        li.appendChild(removeIcon);
+        // Append list item to goal list
+        goalList.appendChild(li);
+        // Clear input field
+        goalInput.value = '';
+
+        // Add click event listener to remove icon
+        removeIcon.addEventListener('click', function () {
+          li.parentNode.removeChild(li);
+        });
+      });
+    </script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
+    <script src="js/form.js"></script>
     <script src="js/scripts.js"></script>
   </body>
 </html>

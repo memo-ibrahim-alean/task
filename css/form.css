@@ -1,0 +1,159 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+#signUpForm {
+  max-width: 100%;
+}
+
+#signUpForm input {
+  padding: 15px 20px;
+  width: 100%;
+  font-size: 1em;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+}
+#signUpForm input:focus {
+  border: 1px solid #4d0790;
+  outline: 0;
+}
+#signUpForm input.invalid {
+  border: 1px solid #ffaba5;
+}
+#signUpForm .step {
+  display: none;
+}
+#signUpForm .form-footer {
+  overflow: auto;
+  gap: 20px;
+}
+#signUpForm .form-footer button {
+  background-color: #4d0790;
+  border: 1px solid #4d0790 !important;
+  color: #ffffff;
+  border: none;
+  padding: 13px 30px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  flex: 1;
+  margin-top: 5px;
+  float: right;
+}
+#signUpForm .form-footer button:hover {
+  opacity: 0.8;
+}
+
+#signUpForm .form-footer #prevBtn {
+  background-color: #fff;
+  color: #4d0790;
+}
+
+#progress {
+  width: 100%;
+  margin: 5% auto;
+}
+
+#progress .form-header {
+  gap: 5px;
+  text-align: center;
+  font-size: 0.9em;
+}
+#progress .form-header .stepIndicator {
+  position: relative;
+  flex: 1;
+  padding-bottom: 30px;
+}
+#progress .form-header .stepIndicator.active {
+  font-weight: 600;
+}
+#progress .form-header .stepIndicator.finish {
+  font-weight: 600;
+}
+#progress .form-header .stepIndicator::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 9;
+  width: 20px;
+  height: 20px;
+  background-color: #ecf5f4;
+  border-radius: 50%;
+  border: 3px solid #ecf5f4;
+}
+#progress .form-header .stepIndicator.active::before {
+  background-color: #4d0790;
+  border: 3px solid #f1eef48f;
+}
+#progress .form-header .stepIndicator.finish::before {
+  background-color: #512e71;
+  border: 3px solid #fff;
+}
+#progress .form-header .stepIndicator::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 100%;
+  height: 3px;
+  background-color: #f3f3f3;
+}
+#progress .form-header .stepIndicator.active::after {
+  background-color: #4d0790;
+}
+#progress .form-header .stepIndicator.finish::after {
+  background-color: #4d0790;
+}
+#progress .form-header .stepIndicator:last-child:after {
+  display: none;
+}
+#progress input {
+  padding: 15px 20px;
+  width: 100%;
+  font-size: 1em;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+}
+#progress input:focus {
+  border: 1px solid #4d0790;
+  outline: 0;
+}
+#progress input.invalid {
+  border: 1px solid #ffaba5;
+}
+#progress .step {
+  display: none;
+}
+#progress .form-footer {
+  overflow: auto;
+  gap: 20px;
+}
+#progress .form-footer button {
+  background-color: #4d0790;
+  border: 1px solid #4d0790 !important;
+  color: #ffffff;
+  border: none;
+  padding: 13px 30px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  flex: 1;
+  margin-top: 5px;
+}
+#progress .form-footer button:hover {
+  opacity: 0.8;
+}
+
+#progress .form-footer #prevBtn {
+  background-color: #fff;
+  color: #4d0790;
+}
+
+.alert-basic {
+  background-color: #F5F3FC !important;
+  color: #4d0790 !important;
+  font-weight: bold;
+}
+
+
